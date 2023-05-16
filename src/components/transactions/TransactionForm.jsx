@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useGlobalState } from "../../context/GlobalState"
-const TransactionForm = () => {
+export const TransactionForm = () => {
     const { addTransaction } = useGlobalState();
     const [description, setDescription] = useState();
     const [amount, setAmount] = useState(0);
@@ -81,4 +81,4 @@ const TransactionForm = () => {
     )
 }
 
-export default TransactionForm
+// export default TransactionForm

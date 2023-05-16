@@ -1,6 +1,6 @@
 import { useGlobalState } from "../../context/GlobalState";
 import TransactionItem from "./TransactionItem";
-const TransactionList = () => {
+export const TransactionList = () => {
 
     const {transactions} = useGlobalState();
     return (
@@ -18,4 +18,4 @@ const TransactionList = () => {
     )
 }
 
-export default TransactionList
+// export default TransactionList
