@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useEffect } from "react";
 import AppReducer from "./AppReducer";
 
 const initialState = {
@@ -14,7 +14,16 @@ export const useGlobalState = () => {
 }
 export const GlobalProvider = ({children}) => {
 
-    const [state, dispacth] = useReducer(AppReducer, initialState);
+    const [state, dispacth] = useReducer(AppReducer, initialState, 
+        () => {
+            const localData = localStorage.getItem('transactions');
+    
+            return localData ? JSON.parse(localData) : initialState
+        });
+
+    useEffect(() => {
+        localStorage.setItem('transactions', JSON.stringify(state))
+    }, [state])
 
     const addTransaction = (transaction) => {
         dispacth({
