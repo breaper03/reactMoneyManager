@@ -1,6 +1,6 @@
 import { useGlobalState } from "../context/GlobalState"
 
-const IncomeExpenses = () => {
+export const IncomeExpenses = () => {
 
     const {transactions} = useGlobalState();
 
@@ -48,4 +48,4 @@ const IncomeExpenses = () => {
     )
 }
 
-export default IncomeExpenses
+// export default IncomeExpenses

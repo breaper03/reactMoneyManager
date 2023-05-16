@@ -3,7 +3,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-const TransactionCharts = () => {
+export const TransactionCharts = () => {
 
     // eslint-disable-next-line no-undef
     const {transactions} = useGlobalState();
@@ -51,4 +51,4 @@ const TransactionCharts = () => {
     )
 }
 
-export default TransactionCharts
+// export default TransactionCharts
