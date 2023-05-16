@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useGlobalState } from "../../context/GlobalState";
-const TransactionItem = ({transaction}) => {
+export const TransactionItem = ({transaction}) => {
 
     const {deleteTransaction} = useGlobalState();
 
@@ -22,4 +22,4 @@ const TransactionItem = ({transaction}) => {
     )
 }
 
-export default TransactionItem
+// export default TransactionItem

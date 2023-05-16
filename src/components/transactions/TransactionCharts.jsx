@@ -32,7 +32,7 @@ export const TransactionCharts = () => {
                     // {x: ".", y: 0.1},
                     income !== undefined ? income.reduce((a, b) => a + b, 0) : 0.1,
                     expense !== undefined ? expense.reduce((a, b) => a + b, 0) : 0.1,
-                    saves !== undefined ? saves.reduce((a, b) => a + b, 0) : 0.1,
+                    saves !== undefined ? saves.reduce((a, b) => a + b, 0) : 0.3,
                     fixedIncome !== undefined ? fixedIncome.reduce((a, b) => a + b, 0) : 0.1,
                     fixedCost !== undefined ? fixedCost.reduce((a, b) => a + b, 0) : 0.1
                 ],

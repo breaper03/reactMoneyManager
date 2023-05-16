@@ -14,9 +14,9 @@ function App() {
         <div className='bg-zinc-950 text-white h-screen flex justify-center items-center'>
           <div className='container mx-auto w-3/5'>
             <div className='bg-zinc-800 p-10 rounded-lg flex gap-x-10'>
-              <div className='w-full'>
+              <div className='w-full justify-center'>
                 {/* <Header /> */}
-                <h1 className='text-4xl font-bold'>Expense Tracker</h1>
+                <h1 className='text-4xl font-bold'>Money Manager</h1>
                 <IncomeExpenses />
                 <Balance />
                 <TransactionForm />

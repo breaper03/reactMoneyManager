@@ -16,11 +16,11 @@ export const Balance = () => {
 
     const income = groupedTransactions.Income !== undefined ? groupedTransactions.Income?.map(x => x.amount).reduce((a, b) => a + b, 0) : 0;
     const expense = groupedTransactions.Expense !== undefined ? groupedTransactions.Expense?.map(x => x.amount).reduce((a, b) => a + b, 0) : 0;
-    const saves = groupedTransactions.Saves !== undefined ? groupedTransactions.Saves?.map(x => x.amount).reduce((a, b) => a + b, 0) : 0;
+    // const saves = groupedTransactions.Saves !== undefined ? groupedTransactions.Saves?.map(x => x.amount).reduce((a, b) => a + b, 0) : 0;
     const fixedCost = groupedTransactions.Mounthly !== undefined ? groupedTransactions.Mounthly?.map(x => x.amount).reduce((a, b) => a + b, 0) : 0;
     const fixedIncome = groupedTransactions.Earnings !== undefined ? groupedTransactions.Earnings?.map(x => x.amount).reduce((a, b) => a + b, 0) : 0;
 
-    const total = income - expense + saves - fixedCost + fixedIncome;
+    const total = income - expense - fixedCost + fixedIncome;
     
     return (
         <>
