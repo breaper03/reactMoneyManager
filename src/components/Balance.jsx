@@ -3,7 +3,6 @@ import { useGlobalState } from "../context/GlobalState"
 export const Balance = () => {
 
     const { transactions } = useGlobalState();
-    // const amount = transactions.map( x => x.amount);
 
     const groupedTransactions = transactions.reduce((result, transaction) => {
         const type = transaction.type;
@@ -24,7 +23,7 @@ export const Balance = () => {
     
     return (
         <>
-            <div className="flex justify-between mb-6 items-center">
+            <div className="flex justify-between items-center p-3">
                 <h4 className="text-2xl font-bold">Balance</h4>
                 <h1 className="text-2xl font-bold ">$ {+total}</h1>
             </div>

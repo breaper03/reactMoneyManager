@@ -5,11 +5,14 @@ export const TransactionList = () => {
     const {transactions} = useGlobalState();
     return (
         <>
+            <br />
             <ul>
                 {
-                    transactions.map(transaction => (
+                    transactions.length
+                    ? (transactions.map(transaction => (
                         <TransactionItem transaction={transaction} key={transaction.id}/>
-                    ))
+                    )))
+                    : <h4 className="text-xl font-bold text-slate-50">NO HAY TRANSACCIONES...</h4>
                 }
             </ul>
             

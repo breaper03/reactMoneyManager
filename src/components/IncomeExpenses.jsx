@@ -21,7 +21,7 @@ export const IncomeExpenses = () => {
 
     return (
         <>
-            <div className="w-full ">
+            <div className="w-full p-3">
                 <div className="justify-between text-green-400 font-bold flex my-2">
                     <h4>INGRESOS:</h4>
                     <p>$ {income !== undefined ? income.reduce((a, b) => a + b, 0) : 0}</p>

@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 import { useGlobalState } from "../../context/GlobalState";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, BarElement, CategoryScale, LinearScale} from "chart.js";
+import { Bar, Doughnut } from "react-chartjs-2";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 export const TransactionCharts = () => {
 
     // eslint-disable-next-line no-undef
@@ -24,29 +25,29 @@ export const TransactionCharts = () => {
     const fixedIncome = groupedTransactions.Earnings?.map(x => x.amount)
 
     const data = {
-        labels: [],
+        labels:["Ingresos", "Gastos", "Ahorros", "Gastos Fijos", "Ingresos Fijos"],
         datasets: [
             {
-                label: 'Total ',
+                label:'',
                 data: [
-                    // {x: ".", y: 0.1},
                     income !== undefined ? income.reduce((a, b) => a + b, 0) : 0.1,
                     expense !== undefined ? expense.reduce((a, b) => a + b, 0) : 0.1,
-                    saves !== undefined ? saves.reduce((a, b) => a + b, 0) : 0.3,
+                    saves !== undefined ? saves.reduce((a, b) => a + b, 0) : 0.1,
+                    fixedCost !== undefined ? fixedCost.reduce((a, b) => a + b, 0) : 0.1,
                     fixedIncome !== undefined ? fixedIncome.reduce((a, b) => a + b, 0) : 0.1,
-                    fixedCost !== undefined ? fixedCost.reduce((a, b) => a + b, 0) : 0.1
                 ],
-                backgroundColor: ["#f87171", "#4ade80", "#60a5fa", "#16a34a", "#dc2626"],
-                borderColor: ["#f87171", "#4ade80", "#60a5fa", "#16a34a", "#dc2626"],
+                backgroundColor: ["#4ade8061", "#f8717161", "#60a5fa61", "#dc262661", "#16a34a61"],
+                borderColor: ["#4ade80","#f87171", "#60a5fa", "#dc2626", "#16a34a"],
                 borderWidth: 1,
+                RTCIceTransport: true
             },
         ],
     };
 
     return (
-        // className="bg-indigo-400 rounded-lg w-fit"
-        <div className="rounded-lg h-fit">
-            <Doughnut data={data} />
+        <div className="justify-center w-full p-3">
+            {/* <Doughnut data={data} /> */}
+            <Bar data={data}/>
         </div>
     )
 }
